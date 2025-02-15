@@ -1,24 +1,61 @@
-// filepath: /Users/liner/Documents/casino/Frontend/src/App.js
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Signup from "./pages/Signup";
-import Login from "./pages/Login";
-import Welcome from "./welcome";
-import Slideshow from "./Slideshow"; // Import the Slideshow component
 import './App.css';
 
+import {useState} from 'react';
+import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
+
+import Menu from "./Menu";   // Import the Menu component
+import Modal from "./Modal"; // Import the Modal component
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import Slideshow from "./Slideshow"; // Import the Slideshow component
+import Welcome from "./welcome";
+
 function App() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => { setIsModalOpen(true); };
+
+  const closeModal = () => { setIsModalOpen(false); };
+
   return (
     <div className="App">
-      <Slideshow /> {/* Add the Slideshow component */}
+      <header className="App-header">
+        <button className="create-account-button" onClick={openModal}>Create Free Account</button>
+        <button className="login-button">Login</button>
+      </header>
+      <Menu /> 
+      <Slideshow />
+      <Modal isOpen={isModalOpen} onClose={
+    closeModal} />
       <Router>
         <Routes>
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/" element={<Welcome />} />
+          {/*<Route path="/signup" element={
+    <Signup />} />*/
+}
+{ /*  <Route path="/login" element={<Login />} />*/
+}
+          {/*<Route path="/" element={<Welcome />} />*/}
         </Routes>
       </Router>
+      <main>
+        <section>
+          <h2>Section 1</h2>
+          <p>This is some content for section 1.</p>
+        </section>
+        <section>
+          <h2>Section 2</h2>
+          <p>This is some content for section 2.</p>
+        </section>
+        <section>
+          <h2>Section 3</h2>
+          <p>This is some content for section 3.</p>
+        </section>
+      </main>
+      <footer className="App-footer">
+        {/* Footer content */}
+      </footer>
     </div>
   );
-}
+          }
 
-export default App;
+          export default App;

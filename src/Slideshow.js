@@ -1,8 +1,9 @@
-import React from 'react';
-import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './Slideshow.css';
+
+import React from 'react';
+import Slider from 'react-slick';
 
 // Import local images
 import image1 from './img/image1.jpeg';
@@ -11,11 +12,14 @@ import image3 from './img/image3.jpeg';
 
 // Custom arrow components
 const NextArrow = (props) => {
-  const { className, style, onClick } = props;
+  const {className, style, onClick} = props;
   return (
     <div
       className={`${className} custom-arrow next-arrow`}
-      style={{ ...style }}
+      style={
+    {
+      ...style
+    }}
       onClick={onClick}
     >
       &#9654;
