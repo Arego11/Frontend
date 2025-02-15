@@ -9,7 +9,7 @@ function Welcome() {
 
     return (
         <div>
-            <h1 className="fade-in">Welcome to the Casino</h1>
+            <h1 className="fade-in">Welcome </h1>
             <Link to="/signup">
                 <button className="fade-in">Sign Up</button>
             </Link>
