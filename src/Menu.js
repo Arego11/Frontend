@@ -4,7 +4,7 @@ import React, {useState} from 'react';
 
 const Menu = () => {
   const [isOpen, setIsOpen] =
-      useState(true); // Set initial state to true to open the menu by default
+      useState(false); // Set initial state to true to open the menu by default
 
   const toggleMenu = () => { setIsOpen(!isOpen); };
 

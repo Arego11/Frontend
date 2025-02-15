@@ -10,26 +10,24 @@ body {
   background-color: transparent;
   padding: 20px;
   color: white;
-  text-align: right; /* Align content to the right */
+  text-align: right;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1000; /* Ensure the header is above other elements */
-  border-bottom: 1px solid rgba(255, 255, 255, 0.411); /* Outline to separate from the rest of the website */
-  box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.411);
+  box-sizing: border-box;
 }
 
 .create-account-button {
   background-color: #3b3ec0;
   color: white;
   border: none;
-  padding: 8px 16px; /* Adjusted padding */
-  font-size: 14px; /* Adjusted font size */
+  padding: 8px 16px;
+  font-size: 14px;
   cursor: pointer;
   border-radius: 5px;
-  margin-right: 10px; /* Add margin to the right to ensure it doesn't touch the login button */
-  margin-top: 0; /* Ensure no margin on top */
-  margin-bottom: 0; /* Ensure no margin on bottom */
+  margin-right: 10px;
 }
 
 .create-account-button:hover {
@@ -39,17 +37,15 @@ body {
 .login-button {
   background-color: transparent;
   color: white;
-  border: 2px solid white; /* Outline */
-  padding: 8px 18px; /* Slightly larger padding */
-  font-size: 14px; /* Slightly larger font size */
+  border: 2px solid white;
+  padding: 8px 18px;
+  font-size: 14px;
   cursor: pointer;
   border-radius: 5px;
-  margin-top: 0; /* Ensure no margin on top */
-  margin-bottom: 0; /* Ensure no margin on bottom */
 }
 
 .login-button:hover {
-  background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent background on hover */
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .App-footer {
@@ -58,20 +54,20 @@ body {
   color: white;
   text-align: center;
   padding: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.411); /* Outline to separate from the rest of the website */
+  border-top: 1px solid rgba(255, 255, 255, 0.411);
   position: fixed;
   bottom: 0;
   left: 0;
 }
 
 #root {
-  padding-top: 80px; /* Adjust this value based on the height of your header */
-  padding-bottom: 60px; /* Adjust this value based on the height of your footer */
+  padding-top: 80px;
+  padding-bottom: 60px;
 }
 
 main {
   padding: 20px;
-  min-height: 100vh; /* Ensure the main content takes up at least the full viewport height */
+  min-height: 100vh;
 }
 
 section {
@@ -87,23 +83,23 @@ section {
   color: white;
   font-size: 24px;
   cursor: pointer;
-  z-index: 1001; /* Ensure the button is above other elements */
+  z-index: 1001;
 }
 
 .menu-tab {
   position: fixed;
   top: 0;
-  left: -250px; /* Change from right to left */
+  left: -250px;
   width: 250px;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.9);
   color: white;
-  transition: left 0.3s ease; /* Change from right to left */
-  z-index: 1000; /* Ensure the tab is above other elements */
+  transition: left 0.3s ease;
+  z-index: 1000;
 }
 
 .menu-tab.open {
-  left: 0; /* Change from right to left */
+  left: 0;
 }
 
 .menu-tab ul {

@@ -3,12 +3,11 @@ import './App.css';
 import {useState} from 'react';
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 
-import Menu from "./Menu";   // Import the Menu component
-import Modal from "./Modal"; // Import the Modal component
+import Menu from "./Menu";   
+import Modal from "./Modal"; 
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
-import Slideshow from "./Slideshow"; // Import the Slideshow component
-import Welcome from "./welcome";
+import Slideshow from "./Slideshow"; 
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -29,12 +28,8 @@ function App() {
     closeModal} />
       <Router>
         <Routes>
-          {/*<Route path="/signup" element={
-    <Signup />} />*/
-}
-{ /*  <Route path="/login" element={<Login />} />*/
-}
-          {/*<Route path="/" element={<Welcome />} />*/}
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </Router>
       <main>

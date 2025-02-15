@@ -13,10 +13,14 @@
 
 .modal-content {
   background: white;
-  padding: 20px;
+  padding: 40px; /* Increased padding */
   border-radius: 8px;
   width: 300px;
+  height: 400px; /* Increased height */
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensure content is spaced out */
 }
 
 .modal-content h2 {
@@ -26,27 +30,44 @@
 .modal-content form {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  flex-grow: 1; /* Allow form to grow and take available space */
+  justify-content: flex-end; /* Align form content to the bottom */
 }
 
 .modal-content label {
-  margin-bottom: 10px;
+  margin-bottom: 5px; /* Reduced margin */
+  width: 100%;
+  text-align: left;
 }
 
 .modal-content input {
   padding: 8px;
-  margin-top: 5px;
-  margin-bottom: 15px;
+  margin-top: 0px;  /* Reduced margin */
+  margin-bottom: 0px;  /* Reduced margin */
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 1px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.modal-content .buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 10px; /* Add margin between inputs and buttons */
 }
 
 .modal-content button {
   padding: 10px;
-  background-color: #3b2793;
+  background-color: #3b3ec0;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  width: 100%;
+  margin-top: 10px; /* Add margin between buttons */
 }
 
 .modal-content button:hover {
