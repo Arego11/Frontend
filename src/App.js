@@ -34,14 +34,12 @@ function App() {
         <ModalLogin isOpen={isModalLoginOpen} onClose={closeModalLogin} />
         <Router>
           <Routes>
-            <Route path="/signup" element={
-    <Signup />} />
+            <Route path="/signup" element={<Signup />} />
             <Route path="/login" element={<Login />} />
           </Routes>
         </Router>
       </div>
       <footer className="App-footer">
-        {/* Footer content */}
       </footer>
     </div>
   );

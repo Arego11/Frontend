@@ -5,16 +5,15 @@ import './Slideshow.css';
 import React from 'react';
 import Slider from 'react-slick';
 
-// Import local images
 import image1 from './img/image4.jpg';
 import image2 from './img/image5.jpg';
 import image3 from './img/image6.jpg';
 
-// Custom arrow components
 const NextArrow = (props) => {
   const {className, style, onClick} = props;
   return (
-    <div className={`${className} custom-arrow next-arrow`}style={{...style}}onClick={onClick}> &#9654;
+    <div className={`${className} custom-arrow next-arrow`} style={{ ...style }} onClick={onClick}>
+      &#9654;
     </div>
   );
 };

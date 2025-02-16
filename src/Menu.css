@@ -42,9 +42,9 @@
 }
 
 .main-content {
-  transition: filter 0.3s ease;
+  transition: filter 1s ease;
 }
 
 .main-content.blurred {
-  filter: blur(5px);
+  filter: blur(4px);
 }
