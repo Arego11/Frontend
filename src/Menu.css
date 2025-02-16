@@ -8,23 +8,23 @@
   color: white;
   font-size: 24px;
   cursor: pointer;
-  z-index: 1001; /* Ensure the button is above other elements */
+  z-index: 1001; 
 }
 
 .menu-tab {
   position: fixed;
   top: 0;
-  left: -250px; /* Change from right to left */
+  left: -250px; 
   width: 250px;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.9);
   color: white;
-  transition: left 0.3s ease; /* Change from right to left */
-  z-index: 1000; /* Ensure the tab is above other elements */
+  transition: left 0.3s ease; 
+  z-index: 1000; 
 }
 
 .menu-tab.open {
-  left: 0; /* Change from right to left */
+  left: 0; 
 }
 
 .menu-tab ul {
@@ -39,4 +39,12 @@
 .menu-tab ul li a {
   color: white;
   text-decoration: none;
+}
+
+.main-content {
+  transition: filter 0.3s ease;
+}
+
+.main-content.blurred {
+  filter: blur(5px);
 }

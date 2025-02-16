@@ -6,23 +6,15 @@ import React from 'react';
 import Slider from 'react-slick';
 
 // Import local images
-import image1 from './img/image1.jpeg';
-import image2 from './img/image2.jpeg';
-import image3 from './img/image3.jpeg';
+import image1 from './img/image4.jpg';
+import image2 from './img/image5.jpg';
+import image3 from './img/image6.jpg';
 
 // Custom arrow components
 const NextArrow = (props) => {
   const {className, style, onClick} = props;
   return (
-    <div
-      className={`${className} custom-arrow next-arrow`}
-      style={
-    {
-      ...style
-    }}
-      onClick={onClick}
-    >
-      &#9654;
+    <div className={`${className} custom-arrow next-arrow`}style={{...style}}onClick={onClick}> &#9654;
     </div>
   );
 };
@@ -31,10 +23,8 @@ const PrevArrow = (props) => {
   const { className, style, onClick } = props;
   return (
     <div
-      className={`${className} custom-arrow prev-arrow`}
-      style={{ ...style }}
-      onClick={onClick}
-    >
+      className={`${className} custom-arrow prev-arrow`} style={{ ...style }}
+      onClick={onClick}>
       &#9664;
     </div>
   );
