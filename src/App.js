@@ -3,17 +3,18 @@ import './App.css';
 import {useState} from 'react';
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 
-import Menu from "./Menu";   
-import Modal from "./Modal"; 
+import Menu from "./Menu";
+import Modal from "./Modal";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
-import Slideshow from "./Slideshow"; 
+import Slideshow from "./Slideshow";
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [signupData, setSignupData] =
+      useState({username : '', email : '', password : ''});
 
   const openModal = () => { setIsModalOpen(true); };
-
   const closeModal = () => { setIsModalOpen(false); };
 
   return (
@@ -24,12 +25,13 @@ function App() {
       </header>
       <Menu /> 
       <Slideshow />
-      <Modal isOpen={isModalOpen} onClose={
-    closeModal} />
+      <Modal isOpen={isModalOpen} onClose={closeModal} setSignupData={
+    setSignupData} />
       <Router>
         <Routes>
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup signupData={signupData} />} />
+          <Route path="/login" element={
+    <Login />} />
         </Routes>
       </Router>
       <main>
@@ -51,6 +53,6 @@ function App() {
       </footer>
     </div>
   );
-          }
+}
 
-          export default App;
+export default App;

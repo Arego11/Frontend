@@ -9,18 +9,20 @@
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  border-radius: 50px;
 }
 
 .modal-content {
-  background: white;
-  padding: 40px; /* Increased padding */
+  background: #161616; /* Change this to your desired background color */
+  padding: 20px; /* Increased padding */
   border-radius: 8px;
   width: 300px;
-  height: 400px; /* Increased height */
+  height: 500px; /* Increased height */
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Ensure content is spaced out */
+  justify-content: flex-start; /* Align content to the top */
+  position: relative; /* For positioning the close button */
 }
 
 .modal-content h2 {
@@ -31,24 +33,26 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex-grow: 1; /* Allow form to grow and take available space */
-  justify-content: flex-end; /* Align form content to the bottom */
+  flex-grow: 1; 
+  justify-content: flex-start; /* Align form content to the top */
 }
 
 .modal-content label {
-  margin-bottom: 5px; /* Reduced margin */
+  margin-bottom: 5px; 
   width: 100%;
   text-align: left;
 }
 
 .modal-content input {
-  padding: 8px;
-  margin-top: 0px;  /* Reduced margin */
-  margin-bottom: 0px;  /* Reduced margin */
-  border: 1px solid #ccc;
-  border-radius: 1px;
+  padding: 15px;
+  margin-top: 20px;  
+  margin-bottom: 0px;  
+  border: 1px solid #6f6f6f;
+  border-radius: 10px;
   width: 100%;
   box-sizing: border-box;
+  background: transparent; /* Make the input background transparent */
+  color: #E0E0E0; /* Set the text color */
 }
 
 .modal-content .buttons {
@@ -56,7 +60,7 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  margin-top: 10px; /* Add margin between inputs and buttons */
+  margin-top: 10px;
 }
 
 .modal-content button {
@@ -67,17 +71,9 @@
   border-radius: 5px;
   cursor: pointer;
   width: 100%;
-  margin-top: 10px; /* Add margin between buttons */
+  margin-top: 25px; 
 }
 
 .modal-content button:hover {
-  background-color: #ff6347;
-}
-
-.close-button {
-  margin-top: 10px;
-  background-color: transparent;
-  color: #333;
-  border: none;
-  cursor: pointer;
+  background-color: #391a87;
 }

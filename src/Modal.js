@@ -1,26 +1,32 @@
 import './Modal.css';
 
-import React from 'react';
+import {signup} from 'authService';
+import React, {useState} from 'react';
 
 const Modal = ({isOpen, onClose}) => {
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   if (!isOpen) return null;
+
+  const handleSignup = async (e) => {
+    e.preventDefault();
+    const data = await signup(username, email, password);
+    console.log(data); // Check response
+    onClose();
+  };
 
   return (
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-        <h2>Create Free Account</h2>
-        <form>
-          <label>
-            Email:
-            <input type="email" name="email" placeholder="Email" required />
-          </label>
-          <label>
-            Password:
-            <input type="password" name="password" placeholder="Password" required />
-          </label>
+        <h2>Sign Up</h2>
+        <form onSubmit={handleSignup}>
+          <input type="text" name="username" placeholder="Username" onChange={(e) => setUsername(e.target.value)} required />
+          <input type="email" name="email" placeholder="E-mail" onChange={(e) => setEmail(e.target.value)} required />
+          <input type="password" name="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} required />
           <div className="buttons">
             <button type="submit">Create Account</button>
-            <button className="close-button" onClick={onClose}>Close</button>
           </div>
         </form>
       </div>
