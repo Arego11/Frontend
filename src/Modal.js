@@ -1,7 +1,6 @@
-import './Modal.css';
-
 import {signup} from 'authService';
 import React, {useState} from 'react';
+import './Modal.css';
 
 const Modal = ({isOpen, onClose}) => {
   const [username, setUsername] = useState("");
