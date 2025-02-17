@@ -77,3 +77,23 @@
 .modal-content button:hover {
   background-color: #391a87;
 }
+
+.modal-content .signUp .signUp-text {
+  position: absolute;
+  padding: 10px;
+  color: #3b3ec0;
+  cursor: pointer;
+  margin-top: 25px; 
+  font-size: 17px;
+  bottom: 20px;
+  right: 20px;
+  width: auto;  
+}
+.modal-content .question {
+  color: white;
+  padding: 10px;
+  position: absolute;
+  bottom: 20px; 
+  left: 20px;   
+  margin-top: 0; 
+}

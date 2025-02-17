@@ -35,6 +35,10 @@ const ModalLogin = ({isOpen, onClose}) => {
           <div className="buttons">
             <button type="submit">Login</button>
           </div>
+          <div className ="question" > Don't have an account yet? </div>
+          <div className="signUp">
+            <span className="signUp-text" onClick={onClose}>Sign Up</span>
+          </div>
         </form>
       </div>
     </div>

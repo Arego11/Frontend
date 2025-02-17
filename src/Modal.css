@@ -73,30 +73,26 @@
   width: 100%;
   margin-top: 25px; 
 }
-
 .modal-content button:hover {
   background-color: #391a87;
 }
 
-.google-signin-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
+.modal-content .signIn .signIn-text {
+  position: absolute;
   padding: 10px;
-  margin-top: 10px;
-  background-color: white;
-  border-radius: 10px;
+  color: #3b3ec0;
   cursor: pointer;
+  margin-top: 25px; 
+  font-size: 17px;
+  bottom: 20px;
+  right: 20px;
+  width: auto;  
 }
-
-.google-signin-button .google-logo {
-  height: 24px;
-  width: 24px;
-  margin-right: 10px;
-}
-
-.google-signin-button .google-button-text {
-  font-size: 16px;
-  color: #344054;
+.modal-content .question {
+  color: white;
+  padding: 10px;
+  position: absolute;
+  bottom: 20px; 
+  left: 20px;   
+  margin-top: 0; 
 }
