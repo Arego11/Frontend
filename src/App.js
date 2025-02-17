@@ -29,8 +29,7 @@ function App() {
       <Menu />
       <div className="main-content">
         <Slideshow />
-        <Modal isOpen={isModalOpen} onClose={
-    closeModal} />
+        <Modal isOpen={isModalOpen} onClose={closeModal} />
         <ModalLogin isOpen={isModalLoginOpen} onClose={closeModalLogin} />
         <Router>
           <Routes>

@@ -33,7 +33,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex-grow: 1; 
+  flex-grow: 1;
   justify-content: flex-start; /* Align form content to the top */
 }
 
@@ -77,7 +77,7 @@
   background-color: #391a87;
 }
 
-.modal-content .signIn .signIn-text {
+.modal-content .signIn {
   position: absolute;
   padding: 10px;
   color: #3b3ec0;
@@ -87,6 +87,9 @@
   bottom: 20px;
   right: 20px;
   width: auto;  
+}
+.modal-content .signIn:hover {
+  color: #391a87;
 }
 .modal-content .question {
   color: white;
