@@ -1,7 +1,8 @@
-import './Modal.css';
+import '../styles/Modal.css';
 
-import {signup} from 'authService';
 import React, {useEffect, useState} from 'react';
+
+import {signup} from '../api/services/authService';
 
 import ModalLogin from "./ModalLogin";
 

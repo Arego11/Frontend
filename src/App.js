@@ -1,14 +1,14 @@
-import './App.css';
+import './styles/App.css';
 
 import {useState} from 'react';
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 
-import Menu from "./Menu";
-import Modal from "./Modal";
-import ModalLogin from "./ModalLogin";
+import Menu from "./components/Menu";
+import Modal from "./components/Modal";
+import ModalLogin from "./components/ModalLogin";
+import Slideshow from "./components/Slideshow";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
-import Slideshow from "./Slideshow";
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);

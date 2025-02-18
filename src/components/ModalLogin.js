@@ -1,7 +1,8 @@
-import './ModalLogin.css';
+import '../styles/ModalLogin.css';
 
-import {login} from 'authService';
 import React, {useEffect, useState} from 'react';
+
+import {login} from '../api/services/authService';
 
 import Modal from './Modal';
 
@@ -13,15 +14,14 @@ const ModalLogin = ({isOpen, onClose}) => {
 
   const openModal = () => {
     setIsModalOpen(true);
-    onClose(); // Close the login modal
+    onClose();
   };
 
   const closeModal = () => { setIsModalOpen(false); };
 
   useEffect(() => {
     if (isOpen) {
-      setIsModalOpen(false); // Reset the sign-up modal state when the login
-                             // modal is opened
+      setIsModalOpen(false);
     }
   }, [ isOpen ]);
 
@@ -68,8 +68,7 @@ const ModalLogin = ({isOpen, onClose}) => {
           </form>
         </div>
       </div>
-      {isModalOpen && <Modal isOpen={isModalOpen} onClose={closeModal} />}
-    </>
+      {isModalOpen && <Modal isOpen={isModalOpen} onClose={closeModal} />} </>
   );
 };
 

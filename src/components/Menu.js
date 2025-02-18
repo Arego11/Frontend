@@ -1,4 +1,4 @@
-import './Menu.css';
+import '../styles/Menu.css';
 import React, { useState } from 'react';
 
 const Menu = () => {
