@@ -1,0 +1,15 @@
+.chat-layout {
+  display: flex;
+  height: 100vh;
+}
+
+.bot-list-container {
+  width: 20%;
+  border-right: 1px solid #ccc;
+}
+
+.chat-container {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}

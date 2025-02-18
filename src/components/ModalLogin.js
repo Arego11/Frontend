@@ -1,9 +1,6 @@
 import '../styles/ModalLogin.css';
-
 import React, {useEffect, useState} from 'react';
-
 import {login} from '../api/services/authService';
-
 import Modal from './Modal';
 
 const ModalLogin = ({isOpen, onClose}) => {

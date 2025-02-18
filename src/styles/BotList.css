@@ -1,0 +1,16 @@
+.bot-list {
+  padding: 10px;
+}
+
+.bot-list h3 {
+  margin-top: 0;
+}
+
+.bot-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.bot-list li {
+  padding: 5px 0;
+}
