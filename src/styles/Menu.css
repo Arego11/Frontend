@@ -1,50 +1,67 @@
+.menu-container {
+  position: relative;
+}
 
 .menu-button {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  background-color: transparent;
-  border: none;
-  color: white;
-  font-size: 24px;
+  display: flex;
+  flex-direction: column;
+  width: 20px; 
   cursor: pointer;
-  z-index: 1001; 
+}
+
+.menu-button span {
+  background: #fff;
+  border-radius: 10px;
+  height: 2px; 
+  margin: 2px; 
+  transition: .4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+
+.menu-button span:nth-of-type(1) {
+  width: 50%;
+}
+
+.menu-button span:nth-of-type(2) {
+  width: 100%;
+}
+
+.menu-button span:nth-of-type(3) {
+  width: 75%;
+}
+
+.menu-button input[type="checkbox"] {
+  display: none;
+}
+
+.menu-button input[type="checkbox"]:checked ~ span:nth-of-type(1) {
+  transform-origin: bottom;
+  transform: rotatez(40deg) translate(0px, 0px);
+}
+
+.menu-button input[type="checkbox"]:checked ~ span:nth-of-type(2) {
+  transform-origin: top;
+  transform: rotatez(-49deg);
+}
+
+.menu-button input[type="checkbox"]:checked ~ span:nth-of-type(3) {
+  transform-origin: bottom;
+  width: 50%;
+  transform: translate(10px, -4px) rotatez(45deg);
 }
 
 .menu-tab {
-  position: fixed;
-  top: 0;
-  left: -250px; 
-  width: 250px;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
-  color: white;
-  transition: left 0.3s ease; 
-  z-index: 1000; 
+  display: none;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .menu-tab.open {
-  left: 0; 
-}
-
-.menu-tab ul {
-  list-style-type: none;
-  padding: 20px;
-}
-
-.menu-tab ul li {
-  margin: 20px 0;
-}
-
-.menu-tab ul li a {
-  color: white;
-  text-decoration: none;
-}
-
-.main-content {
-  transition: filter 1s ease;
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .main-content.blurred {
-  filter: blur(4px);
+  filter: blur(5px);
 }
