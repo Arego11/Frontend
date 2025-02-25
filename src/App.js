@@ -34,7 +34,8 @@ function App() {
     closeModal} />
           <ModalLogin isOpen={isModalLoginOpen} onClose={closeModalLogin} />
           <Routes>
-            <Route path="/signup" element={<Signup />} />
+            <Route path="/signup" element={
+    <Signup />} />
             <Route path="/login" element={<Login />} />
           </Routes>
         </div>

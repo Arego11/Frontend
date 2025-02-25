@@ -1,7 +1,6 @@
 import '../styles/Menu.css';
 
 import React, {useState} from 'react';
-import {Link} from 'react-router-dom';
 
 const Menu = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,14 +22,10 @@ const Menu = () => {
       </label>
       <div className={`menu-tab ${isOpen ? 'open' : ''}`}>
         <ul>
-          <li><a href="#option1">Profile</a>
-      </li>
-          <li><a href="#option2">Subscription</a>
-      </li>
-          <li><a href="#option3">Chat</a>
-      </li>
-          <li><a href="#option4">Collection</a>
-      </li>
+          <li><a href="#option1">Profile</a></li>
+          <li><a href="#option2">Subscription</a></li>
+          <li><a href="/chat.html" target="_blank" rel="noopener noreferrer">Chat</a></li>
+          <li><a href="#option4">Collection</a></li>
           <li><a href="#option5">Generate</a></li>
         </ul>
       </div>
