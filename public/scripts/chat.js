@@ -16,7 +16,12 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         body : JSON.stringify({message : messageText}),
       })
-          .then((response) => response.json())
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+          })
           .then((data) => { addMessage(data.response, 'bot'); })
           .catch((error) => {
             console.error('Error:', error);
