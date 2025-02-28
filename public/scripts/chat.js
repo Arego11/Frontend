@@ -9,6 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (messageText !== '') {
       addMessage(messageText, 'user');
       userInput.value = '';
+      console.log('Sending message to API:',
+                  messageText); // Log the message being sent
       fetch('/api/chat', {
         method : 'POST',
         headers : {
@@ -22,7 +24,11 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             return response.json();
           })
-          .then((data) => { addMessage(data.response, 'bot'); })
+          .then((data) => {
+            console.log('Received response from API:',
+                        data); // Log the response from the API
+            addMessage(data.response, 'bot');
+          })
           .catch((error) => {
             console.error('Error:', error);
             addMessage('Error communicating with AI.', 'bot');
