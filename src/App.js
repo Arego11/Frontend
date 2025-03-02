@@ -1,6 +1,6 @@
 import './styles/App.css';
 
-import {useState} from 'react';
+import {useCallback, useState} from 'react';
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 
 import Menu from "./components/Menu";
@@ -15,10 +15,15 @@ function App() {
   const [isModalLoginOpen, setIsModalLoginOpen] = useState(false);
 
   const openModal = () => { setIsModalOpen(true); };
-  const closeModal = () => { setIsModalOpen(false); };
+
+  // ✅ Wrap closeModal in useCallback to prevent unnecessary re-renders
+  const closeModal = useCallback(() => { setIsModalOpen(false); }, []);
 
   const openModalLogin = () => { setIsModalLoginOpen(true); };
-  const closeModalLogin = () => { setIsModalLoginOpen(false); };
+
+  // ✅ Wrap closeModalLogin in useCallback to fix the warning
+  const closeModalLogin =
+      useCallback(() => { setIsModalLoginOpen(false); }, []);
 
   return (
     <Router>
@@ -30,6 +35,7 @@ function App() {
         <Menu />
         <div className="main-content">
           <Slideshow />
+          {/* ✅ Pass the fixed closeModal function */}
           <Modal isOpen={isModalOpen} onClose={
     closeModal} />
           <ModalLogin isOpen={isModalLoginOpen} onClose={closeModalLogin} />
@@ -39,8 +45,7 @@ function App() {
             <Route path="/login" element={<Login />} />
           </Routes>
         </div>
-        <footer className="App-footer">
-        </footer>
+        <footer className="App-footer"></footer>
       </div>
     </Router>
   );
