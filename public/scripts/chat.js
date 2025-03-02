@@ -3,9 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const chatForm = document.getElementById('chat-form');
   const userInput = document.getElementById('user-input');
 
-  const API_URL =
-      'https://chat-backend-anku.onrender.com/api/chat'; 
-
+  const API_URL = 'https://chat-backend-anku.onrender.com/api/chat'; 
   chatForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const messageText = userInput.value.trim();
