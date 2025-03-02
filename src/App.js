@@ -44,7 +44,7 @@ function App() {
         </div>
         <footer className="App-footer"></footer>
       </div>
-    </Router>
+    </Router> // Router
   );
 }
 
