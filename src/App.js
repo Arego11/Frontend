@@ -16,12 +16,10 @@ function App() {
 
   const openModal = () => { setIsModalOpen(true); };
 
-  // ✅ Wrap closeModal in useCallback to prevent unnecessary re-renders
   const closeModal = useCallback(() => { setIsModalOpen(false); }, []);
 
   const openModalLogin = () => { setIsModalLoginOpen(true); };
 
-  // ✅ Wrap closeModalLogin in useCallback to fix the warning
   const closeModalLogin =
       useCallback(() => { setIsModalLoginOpen(false); }, []);
 
@@ -35,7 +33,6 @@ function App() {
         <Menu />
         <div className="main-content">
           <Slideshow />
-          {/* ✅ Pass the fixed closeModal function */}
           <Modal isOpen={isModalOpen} onClose={
     closeModal} />
           <ModalLogin isOpen={isModalLoginOpen} onClose={closeModalLogin} />

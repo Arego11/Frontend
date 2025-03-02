@@ -26,7 +26,7 @@ const ModalLogin = ({isOpen, onClose}) => {
     if (isModalOpen) {
       onClose(); // Close the login modal when the sign-up modal is opened
     }
-  }, [ isModalOpen ]);
+  }, [isModalOpen, onClose]);
 
   if (!isOpen && !isModalOpen)
     return null;

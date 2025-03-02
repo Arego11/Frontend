@@ -23,8 +23,7 @@ const Modal = ({isOpen, onClose}) => {
   };
 
   useEffect(() => {
-    if (isOpen) {
-      setIsModalLoginOpen(false); // Reset the login modal state when the sign-up modal is opened
+    if (isOpen) {setIsModalLoginOpen(false); // Reset the login modal state when the sign-up modal is opened
     }
   }, [isOpen]);
 
@@ -32,7 +31,7 @@ const Modal = ({isOpen, onClose}) => {
     if (isModalLoginOpen) {
       onClose(); // Close the sign-up modal when the login modal is opened
     }
-  }, [isModalLoginOpen]);
+  }, [isModalLoginOpen, onClose]);
 
   if (!isOpen && !isModalLoginOpen) return null;
 
