@@ -3,36 +3,39 @@ document.addEventListener('DOMContentLoaded', () => {
   const chatForm = document.getElementById('chat-form');
   const userInput = document.getElementById('user-input');
 
-  chatForm.addEventListener('submit', (e) => {
+  const API_URL =
+      'https://chat-backend-anku.onrender.com/api/chat'; 
+
+  chatForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const messageText = userInput.value.trim();
-    if (messageText !== '') {
-      addMessage(messageText, 'user');
-      userInput.value = '';
-      console.log('Sending message to API:',
-                  messageText); // Log the message being sent
-      fetch('/api/chat', {
+
+    if (messageText === '')
+      return;
+
+    addMessage(messageText, 'user');
+    userInput.value = '';
+
+    console.log('Sending message to API:', messageText);
+
+    try {
+      const response = await fetch(API_URL, {
         method : 'POST',
-        headers : {
-          'Content-Type' : 'application/json',
-        },
+        headers : {'Content-Type' : 'application/json'},
         body : JSON.stringify({message : messageText}),
-      })
-          .then((response) => {
-            if (!response.ok) {
-              throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            return response.json();
-          })
-          .then((data) => {
-            console.log('Received response from API:',
-                        data); // Log the response from the API
-            addMessage(data.response, 'bot');
-          })
-          .catch((error) => {
-            console.error('Error:', error);
-            addMessage('Error communicating with AI.', 'bot');
-          });
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      console.log('Received response from API:', data);
+
+      addMessage(data.response, 'bot');
+    } catch (error) {
+      console.error('Error:', error);
+      addMessage('Error communicating with AI.', 'bot');
     }
   });
 
